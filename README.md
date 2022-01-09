@@ -1,11 +1,11 @@
 <h1 align="center">
-    <img alt="gopizza" title="gopizza" src=".src/assets/brand.png" />
+    <img alt="gopizza" title="gopizza" src="./src/assets/brand.png" />
 </h1>
 
 <p align="center">
-  <img alt="gopizza" src=".src/assets/screen1.png" width="200" heigth="416" /> 
-  <img alt="gopizza" src=".src/assets/screen2.png" width="200" heigth="416" /> 
-  <img alt="gopizza" src=".src/assets/screen3.png" width="200" heigth="416" /> 
+  <img alt="gopizza" src="./src/assets/screen1.png" width="200" heigth="416" /> 
+  <img alt="gopizza" src="./src/assets/screen2.png" width="200" heigth="416" /> 
+  <img alt="gopizza" src="./src/assets/screen3.png" width="200" heigth="416" /> 
 </p>
 
 ## :bookmark: About the project
