@@ -1,0 +1,73 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "__DEV__": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "rules": {
+    "no-nested-ternary": "off",
+    "react/no-unstable-nested-components": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "consistent-return": "off",
+    "import/no-useless-path-segments": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "linebreak-style": "off",
+    "import/extensions": "off",
+    "react/function-component-definition": "off",
+    "react/style-prop-object": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-named-as-default": "off",
+    "import/no-relative-packages": "off",
+    "import/no-cycle": "off",
+    "import/no-self-import": "off",
+    "import/order": "off",
+    "import/no-duplicates": "off",
+    "import/named": "off",
+    "import/no-unresolved": "off",
+    "comma-dangle": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-useless-return": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/ban-types": "off",
+    "react/require-default-props": "off",
+    "object-curly-newline": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "camelcase": "off",
+    "import/prefer-default-export": "off",
+    "semi": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}

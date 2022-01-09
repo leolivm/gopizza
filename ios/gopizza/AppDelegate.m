@@ -5,6 +5,7 @@
 #import <React/RCTRootView.h>
 #import <React/RCTLinkingManager.h>
 #import <React/RCTConvert.h>
+#import <Firebase.h>
 
 #if defined(FB_SONARKIT_ENABLED) && __has_include(<FlipperKit/FlipperClient.h>)
 #import <FlipperKit/FlipperClient.h>
@@ -29,15 +30,22 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [FIRApp configure];
 #if defined(FB_SONARKIT_ENABLED) && __has_include(<FlipperKit/FlipperClient.h>)
   InitializeFlipper(application);
 #endif
   
-  RCTBridge *bridge = [self.reactDelegate createBridgeWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [self.reactDelegate createRootViewWithBridge:bridge moduleName:@"main" initialProperties:nil];
-  rootView.backgroundColor = [UIColor whiteColor];
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"main" initialProperties:nil];
+  id rootViewBackgroundColor = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"RCTRootViewBackgroundColor"];
+  if (rootViewBackgroundColor != nil) {
+    rootView.backgroundColor = [RCTConvert UIColor:rootViewBackgroundColor];
+  } else {
+    rootView.backgroundColor = [UIColor whiteColor];
+  }
+
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [self.reactDelegate createRootViewController];
+  UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
