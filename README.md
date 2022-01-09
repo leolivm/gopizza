@@ -1,5 +1,6 @@
 <h1 align="center">
     <img alt="gopizza" title="gopizza" src="./src/assets/brand.png" />
+    <h3 align="center">GoPizza</h3>
 </h1>
 
 <p align="center">
